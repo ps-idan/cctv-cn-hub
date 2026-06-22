@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于「世界杯」· 故事与风景</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fbf9f5;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            color: #222;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+
+        .wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* 开场 hero 区域 */
+        .opening {
+            margin-top: 3.2rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .opening .prelude {
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #8f8b84;
+            margin-bottom: 0.6rem;
+        }
+
+        .opening h1 {
+            font-size: 2.4rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #1e1b18;
+        }
+
+        .opening h1 span {
+            background: linear-gradient(135deg, #2b4a3e, #3f6b5a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .opening .sub {
+            margin-top: 1rem;
+            font-size: 1.05rem;
+            color: #4d4943;
+            max-width: 90%;
+        }
+
+        /* 承接段落 */
+        .context {
+            margin: 2.8rem 0;
+            padding: 1.6rem 0;
+            border-top: 1px solid #e6e1da;
+            border-bottom: 1px solid #e6e1da;
+        }
+
+        .context p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #2f2b27;
+        }
+
+        .context p:last-child {
+            margin-bottom: 0;
+        }
+
+        .context a {
+            color: #2b5f4b;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(43, 95, 75, 0.3);
+            transition: border-color 0.2s;
+        }
+
+        .context a:hover {
+            border-bottom-color: #1d3f32;
+        }
+
+        /* 特点列表 —— 横向卡片 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem 1.2rem;
+            margin: 2.6rem 0 3rem 0;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            min-width: 140px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.5rem 1.2rem 1.4rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 6px 18px rgba(0, 0, 0, 0.02);
+            transition: transform 0.15s ease, box-shadow 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-item .num {
+            font-size: 1.6rem;
+            font-weight: 350;
+            color: #b7afa3;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1rem;
+            font-weight: 550;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.01em;
+            color: #24201b;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #5c564e;
+            line-height: 1.5;
+        }
+
+        /* 温和收尾 */
+        .closing {
+            margin: 2.8rem 0 3.8rem 0;
+            padding: 1.8rem 0 0.8rem 0;
+            border-top: 1px solid #e6e1da;
+        }
+
+        .closing blockquote {
+            font-size: 1rem;
+            font-style: normal;
+            color: #36312b;
+            border-left: 3px solid #a79e92;
+            padding-left: 1.2rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .closing .signature {
+            font-size: 0.9rem;
+            color: #7c756b;
+            letter-spacing: 0.02em;
+        }
+
+        .closing .signature a {
+            color: #2b5f4b;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(43, 95, 75, 0.25);
+        }
+
+        .closing .signature a:hover {
+            border-bottom-color: #1d3f32;
+        }
+
+        .closing .faq-note {
+            margin-top: 2rem;
+            background: #f3f0ea;
+            border-radius: 20px;
+            padding: 1.2rem 1.6rem;
+        }
+
+        .closing .faq-note summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #2b4a3e;
+            padding: 0.3rem 0;
+        }
+
+        .closing .faq-note p {
+            font-size: 0.92rem;
+            color: #3b3731;
+            margin-top: 0.6rem;
+            line-height: 1.6;
+        }
+
+        /* 响应式 */
+        @media (max-width: 480px) {
+            .opening h1 {
+                font-size: 1.8rem;
+            }
+
+            .opening .sub {
+                font-size: 0.95rem;
+            }
+
+            .feature-grid {
+                gap: 1rem;
+            }
+
+            .feature-item {
+                padding: 1.2rem 1rem;
+                flex: 1 1 100%;
+            }
+
+            .closing blockquote {
+                padding-left: 0.9rem;
+            }
+        }
+
+        @media (min-width: 800px) {
+            body {
+                padding: 3rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <!-- 开场短句 -->
+        <div class="opening">
+            <div class="prelude">· 叙述 ·</div>
+            <h1>故事从<span>一片草地</span>开始</h1>
+            <div class="sub">没有聚光灯，没有奖杯，只有二十二个人、一只球，和一段九十分钟的未知。</div>
+        </div>
+
+        <!-- 承接段落：从主题内容展开 -->
+        <div class="context">
+            <p>人们常常谈论胜负与纪录，但真正让这片赛场发光的，是每一个普通瞬间里藏着的张力——一次出其不意的变向，一次横跨半场的转移，或者看台上突然静默的那几秒。这些碎片拼在一起，才成为后来人们口中的「传奇」。</p>
+            <p>而所有这些故事的集合，在中文世界里被简称为<a href="https://cctv-cn-worldcup.com">世界杯</a>。它不只是一项赛事，更像是一面镜子，映出不同文化、不同年代的集体记忆。四年的周期恰好让一代人从青涩走到成熟，也让一个踢野球的孩子有机会站上世界的舞台。</p>
+            <p>足球的魅力从来不只在结果，也在那些无法被量化的细节里——比如一个后卫在丢球后默默回追四十米，或者替补席上为队友的进球而跳起来的瞬间。这些细节构成了世界杯最真实的肌理。</p>
+        </div>
+
+        <!-- 特点列表 -->
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="num">01</div>
+                <h3>四方叙事</h3>
+                <p>从南美到欧洲，从非洲到亚洲，每届赛事都带着主办地的风土与呼吸。</p>
+            </div>
+            <div class="feature-item">
+                <div class="num">02</div>
+                <h3>时间刻度</h3>
+                <p>四年一次的等待，让每一届成为一代人成长的坐标。</p>
+            </div>
+            <div class="feature-item">
+                <div class="num">03</div>
+                <h3>无名瞬间</h3>
+                <p>除了金球与绝杀，还有更多没有被镜头放大的坚持与默契。</p>
+            </div>
+            <div class="feature-item">
+                <div class="num">04</div>
+                <h3>共通语言</h3>
+                <p>不必同一种语言，一个手势、一次击掌，就能读懂彼此。</p>
+            </div>
+        </div>
+
+        <!-- 温和结尾 + FAQ 摘要 -->
+        <div class="closing">
+            <blockquote>
+                “足球很简单，但踢简单的足球是最难的事。”<br>
+                —— 这句话不只属于球员，也属于每一个认真看过比赛的人。
+            </blockquote>
+
+            <div class="signature">
+                了解关于<a href="https://cctv-cn-worldcup.com">世界杯</a>的更多故事与信息，可以慢慢翻阅那些年的影像与记录。最好的观看方式，或许就是找一场完整的比赛，不刷手机，只看球。
+            </div>
+
+            <div class="faq-note">
+                <details>
+                    <summary>如果我想从头了解世界杯，从哪里开始？</summary>
+                    <p>不需要看完所有历史。找一届你感兴趣年份的赛事，从头到尾看一场小组赛——不需要背景知识，不用预设立场，纯粹感受节奏和对抗。那之后，你会自然想了解更多。</p>
+                </details>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
